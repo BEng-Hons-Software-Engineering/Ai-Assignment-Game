@@ -32,12 +32,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) == true)
         {
-            body.velocity = Vector2.right * moveSpeed;
+            body.velocity = Vector2.right * 10;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
         {
-            body.velocity = Vector2.left * moveSpeed;
+            body.velocity = Vector2.left * 10;
         }
 
     }
