@@ -8,6 +8,7 @@ TagManager:
   - Lifes
   - Enemy
   - Autojumb
+  - Egg
   layers:
   - Default
   - TransparentFX
