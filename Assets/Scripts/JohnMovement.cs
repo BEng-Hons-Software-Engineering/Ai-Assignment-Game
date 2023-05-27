@@ -31,8 +31,11 @@ public class JohnMovement : MonoBehaviour
    public float stoppingDistance = 8;
    public float retreatDistance = 5;
    private Transform target;
+   private Transform targetEgg;
 
    public GameObject enemyObj;
+   public GameObject birdObj;
+   public GameObject eggObj;
 
    // Start is called before the first frame update
    void Start()
@@ -40,6 +43,7 @@ public class JohnMovement : MonoBehaviour
 
       //   targetTag = GameObject.FindGameObjectWithTag("Player");
       target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+      targetEgg = GameObject.FindGameObjectWithTag("Egg").GetComponent<Transform>();
    }
 
    private void Awake()
@@ -81,6 +85,28 @@ public class JohnMovement : MonoBehaviour
          Debug.Log("Touched");
 
          animator.SetTrigger("kill");
+      }
+
+
+      if (Vector2.Distance(transform.position, targetEgg.position) < stoppingDistance)
+      {
+         Debug.Log("Touched");
+
+
+
+         birdObj.SetActive(true);
+         eggObj.SetActive(false);
+         //  animator.SetBool("kill", false);
+      }
+      else if (
+         Vector2.Distance(transform.position, targetEgg.position) == stoppingDistance
+      )
+      {
+         Debug.Log("Touched");
+         birdObj.SetActive(true);
+         eggObj.SetActive(false);
+
+
       }
 
 
